@@ -67,6 +67,7 @@ namespace OSLogView
             arr_modules.Add("XEngine", Enum_ModuleCategory.mod_script);
             arr_modules.Add("SCRIPT INSTANCE", Enum_ModuleCategory.mod_script);
 
+            arr_modules.Add("OPENSIM", Enum_ModuleCategory.mod_main);
             arr_modules.Add("OPENSIM MAIN", Enum_ModuleCategory.mod_main);
             arr_modules.Add("CONFIG", Enum_ModuleCategory.mod_main);
             arr_modules.Add("LOCAL CONSOLE", Enum_ModuleCategory.mod_main);
@@ -85,6 +86,7 @@ namespace OSLogView
             arr_modules.Add("LOCAL SIMULATION CONNECTOR", Enum_ModuleCategory.mod_main);
             arr_modules.Add("REMOTE SIMULATION CONNECTOR", Enum_ModuleCategory.mod_main);
             arr_modules.Add("SERVER", Enum_ModuleCategory.mod_main);
+            arr_modules.Add("REGION", Enum_ModuleCategory.mod_main);
             arr_modules.Add("REGION DB", Enum_ModuleCategory.mod_main);
             arr_modules.Add("SCENEGRAPH", Enum_ModuleCategory.mod_main);
             arr_modules.Add("SCENE OBJECT PART", Enum_ModuleCategory.mod_main);
@@ -95,18 +97,21 @@ namespace OSLogView
             arr_modules.Add("LLUDPSERVER", Enum_ModuleCategory.mod_network);
             arr_modules.Add("LOGHTTP", Enum_ModuleCategory.mod_network);
             arr_modules.Add("FORMS", Enum_ModuleCategory.mod_network);
+            arr_modules.Add("PACKETPOOL", Enum_ModuleCategory.mod_network);
 
             arr_modules.Add("FLOTSAM ASSET CACHE", Enum_ModuleCategory.mod_assets);
             arr_modules.Add("HG ASSET SERVICE", Enum_ModuleCategory.mod_assets);
             arr_modules.Add("HG ASSET CONNECTOR", Enum_ModuleCategory.mod_assets);
             arr_modules.Add("ASSET CONNECTOR", Enum_ModuleCategory.mod_assets);
             arr_modules.Add("J2KDecoderModule", Enum_ModuleCategory.mod_assets);
+            arr_modules.Add("ASSET DB", Enum_ModuleCategory.mod_assets);
 
             arr_modules.Add("LIBRARY INVENTORY", Enum_ModuleCategory.mod_inventory);
             arr_modules.Add("HG INVENTORY CONNECTOR", Enum_ModuleCategory.mod_inventory);
             arr_modules.Add("HG INVENTORY ACCESS MODULE", Enum_ModuleCategory.mod_inventory);
             arr_modules.Add("WEB FETCH INV DESC HANDLER", Enum_ModuleCategory.mod_inventory);
             arr_modules.Add("AGENT INVENTORY", Enum_ModuleCategory.mod_inventory);
+            arr_modules.Add("AGENTINVENTORY", Enum_ModuleCategory.mod_inventory);
             arr_modules.Add("PRIM INVENTORY", Enum_ModuleCategory.mod_inventory);
             arr_modules.Add("InventoryAccessModule", Enum_ModuleCategory.mod_inventory);
             arr_modules.Add("INVENTORY ACCESS MODULE", Enum_ModuleCategory.mod_inventory);
@@ -122,9 +127,11 @@ namespace OSLogView
             arr_modules.Add("REMOTE GRID CONNECTOR", Enum_ModuleCategory.mod_grid);
             arr_modules.Add("HYPERGRID LINKER", Enum_ModuleCategory.mod_grid);
 
+            arr_modules.Add("AUTHENTICATION DB", Enum_ModuleCategory.mod_user_agents);
             arr_modules.Add("AUTH CONNECTOR", Enum_ModuleCategory.mod_user_agents);
             arr_modules.Add("AVATAR CONNECTOR", Enum_ModuleCategory.mod_user_agents);
             arr_modules.Add("REMOTE GRID USER CONNECTOR", Enum_ModuleCategory.mod_user_agents);
+            arr_modules.Add("USER ACCOUNT SERVICE", Enum_ModuleCategory.mod_user_agents);
             arr_modules.Add("USER CONNECTOR", Enum_ModuleCategory.mod_user_agents);
             arr_modules.Add("SSDwell", Enum_ModuleCategory.mod_user_agents);
             arr_modules.Add("BASE PRESENCE SERVICE CONNECTOR", Enum_ModuleCategory.mod_user_agents);
@@ -154,6 +161,7 @@ namespace OSLogView
             arr_modules.Add("CHAT", Enum_ModuleCategory.mod_social);
             arr_modules.Add("EMAIL", Enum_ModuleCategory.mod_social);
             arr_modules.Add("PROFILES", Enum_ModuleCategory.mod_social);
+            arr_modules.Add("PROFILES_DATA", Enum_ModuleCategory.mod_social);
 
             arr_modules.Add("Game", Enum_ModuleCategory.mod_ss_game);
             arr_modules.Add("BANK", Enum_ModuleCategory.mod_ss_bank);
@@ -176,6 +184,7 @@ namespace OSLogView
             arr_modules.Add("EnvironmentModule", Enum_ModuleCategory.mod_environment);
             arr_modules.Add("WIND", Enum_ModuleCategory.mod_environment);
             arr_modules.Add("REGION DB MYSQL", Enum_ModuleCategory.mod_environment);
+            arr_modules.Add("TERRAIN", Enum_ModuleCategory.mod_environment);
         }
 
         public Enum_ModuleCategory GetModuleEnum(string strModule)

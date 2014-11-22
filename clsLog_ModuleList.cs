@@ -87,6 +87,7 @@ namespace OSLogView
             arr_modules.Add("SERVER", Enum_ModuleCategory.mod_main);
             arr_modules.Add("REGION DB", Enum_ModuleCategory.mod_main);
             arr_modules.Add("SCENEGRAPH", Enum_ModuleCategory.mod_main);
+            arr_modules.Add("SCENE OBJECT PART", Enum_ModuleCategory.mod_main);
 
             arr_modules.Add("CLIENTSTACK", Enum_ModuleCategory.mod_network);
             arr_modules.Add("REGION SERVER", Enum_ModuleCategory.mod_network);
@@ -169,6 +170,7 @@ namespace OSLogView
             arr_modules.Add("BULLETS SCENE", Enum_ModuleCategory.mod_physics);
             arr_modules.Add("EXTENDED PHYSICS", Enum_ModuleCategory.mod_physics);
             arr_modules.Add("BULLETSIM SHAPE", Enum_ModuleCategory.mod_physics);
+            arr_modules.Add("BULLETS PRIM", Enum_ModuleCategory.mod_physics);
 
             arr_modules.Add("HEIGHTMAP TERRAIN DATA", Enum_ModuleCategory.mod_environment);
             arr_modules.Add("EnvironmentModule", Enum_ModuleCategory.mod_environment);

@@ -168,29 +168,37 @@ namespace OSLogView
         // Test Start For DateStamp
         private bool Test_StartDateStamp()
         {
-            string re1 = "((?:2|1)\\d{3}(?:-|\\/)(?:(?:0[1-9])|(?:1[0-2]))(?:-|\\/)(?:(?:0[1-9])|(?:[1-2][0-9])|(?:3[0-1]))(?:T|\\s)(?:(?:[0-1][0-9])|(?:2[0-3])):(?:[0-5][0-9]):(?:[0-5][0-9]))";	// Time Stamp 1
-            string re2 = "(,)";	// Any Single Character 1
-            string re3 = "(\\d{3})";	// Any Single Digit 1
-
-            Regex r = new Regex(re1 + re2 + re3, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            Match m = r.Match(line_current.line_formated.Substring(0, 23));
-            if (m.Success)
+            try
             {
-                // Set Date
-                line_current.line_time = DateTime.Parse(m.Groups[1].ToString());// TimeStamp
+                string re1 = "((?:2|1)\\d{3}(?:-|\\/)(?:(?:0[1-9])|(?:1[0-2]))(?:-|\\/)(?:(?:0[1-9])|(?:[1-2][0-9])|(?:3[0-1]))(?:T|\\s)(?:(?:[0-1][0-9])|(?:2[0-3])):(?:[0-5][0-9]):(?:[0-5][0-9]))";	// Time Stamp 1
+                string re2 = "(,)";	// Any Single Character 1
+                string re3 = "(\\d{3})";	// Any Single Digit 1
 
-                // Add Milliseconds For Less Chance Of Duplicate TimeStamps
-                line_current.line_time = line_current.line_time.AddMilliseconds(Convert.ToDouble(m.Groups[3].ToString()));
+                Regex r = new Regex(re1 + re2 + re3, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                Match m = r.Match(line_current.line_formated.Substring(0, 23));
+                if (m.Success)
+                {
+                    // Set Date
+                    line_current.line_time = DateTime.Parse(m.Groups[1].ToString());// TimeStamp
 
-                // Remove From Formatted String
-                line_current.line_formated = line_current.line_formated.Substring(24, line_current.line_formated.Length - 24);
+                    // Add Milliseconds For Less Chance Of Duplicate TimeStamps
+                    line_current.line_time = line_current.line_time.AddMilliseconds(Convert.ToDouble(m.Groups[3].ToString()));
+
+                    // Remove From Formatted String
+                    line_current.line_formated = line_current.line_formated.Substring(24, line_current.line_formated.Length - 24);
+                }
+                else
+                {
+                    line_current.line_time = DateTime.MinValue;
+                }
+
+                return m.Success;
             }
-            else
-            {
-                line_current.line_time = DateTime.MinValue;
+            catch
+            {   // Short lines cause a crash with substring index out of bounds.
+                // These must be line fragments of a previous error line so handle as such
+                return false;
             }
-
-            return m.Success;
         }
 
         // Test Log Level
